@@ -12,6 +12,8 @@ let foodY = 10;
 let scoreHtml = document.getElementById("score");
 let score = 0;
 
+let changingDirection = true;
+
 ctx.fillStyle = "white";
 ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
 
@@ -41,6 +43,13 @@ function changeDirection(event) {
     const goingDown = dy === 10;
     const goingRight = dx === 10;
     const goingLeft = dx === -10;
+
+
+    if(changingDirection) {
+        return;
+    }
+
+    changingDirection = true;
 
     if (keyPressed === LEFT_KEY && !goingRight) {
         dx = -10;
@@ -136,6 +145,7 @@ function main() {
     
     setTimeout(function onTick() {
         clearCanvas();
+        changingDirection = false;
         advanceSnake();
         drawSnake();
         drawFood();
