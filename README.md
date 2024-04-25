@@ -4,16 +4,16 @@ Welcome to the Classic Snake Game! This project recreates the iconic Snake game 
 
 ## Gameplay
 
-- Controls: Use the arrow keys (Up, Down, Left, Right) to control the direction of the snake.
-- Objective: Guide the snake to eat food pellets scattered throughout the game board. Each time the snake eats a pellet, it grows longer.
-- Game Over: The game ends if the snake collides with the walls or itself.
-- Scoring: Score points for each pellet eaten. Try to achieve the highest score possible!
+- __Controls:__ Use the arrow keys (Up, Down, Left, Right) to control the direction of the snake.
+- __Objective:__ Guide the snake to eat food pellets scattered throughout the game board. Each time the snake eats a pellet, it grows longer.
+- __Game Over:__ The game ends if the snake collides with the walls or itself.
+- __Scoring:__ Score points for each pellet eaten. Try to achieve the highest score possible!
 
 ## Features
-- Responsive Design: The game is built with responsive design principles, allowing it to adapt to various screen sizes and devices.
-- Dynamic Gameplay: Experience smooth and dynamic gameplay with intuitive controls.
-- Score Tracking: Keep track of your score as you play, striving to beat your previous high score.
-- Endless Fun: Enjoy endless entertainment with the timeless gameplay of the Snake game.
+- __Responsive Design:__ The game is built with responsive design principles, allowing it to adapt to various screen sizes and devices.
+- __Dynamic Gameplay:__ Experience smooth and dynamic gameplay with intuitive controls.
+- __Score Tracking:__ Keep track of your score as you play, striving to beat your previous high score.
+- __Endless Fun:__ Enjoy endless entertainment with the timeless gameplay of the Snake game.
 
 ## Getting Started
 To run the Snake Game locally on your machine, follow these steps:
