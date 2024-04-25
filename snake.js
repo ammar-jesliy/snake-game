@@ -1,6 +1,8 @@
 const gameCanvas = document.getElementById("gameCanvas");
 const ctx = gameCanvas.getContext("2d");
 
+const retry_btn = document.getElementById("retry");
+
 let snake = [ {x: 150, y: 150}, {x: 140, y: 150}, {x: 130, y: 150}, {x: 120, y: 150}, {x: 110, y: 150} ];
 
 let dx = 10;
@@ -36,8 +38,6 @@ function changeDirection(event) {
     const DOWN_KEY = "ArrowDown";
 
     const keyPressed = event.key;
-
-    console.log(keyPressed);
 
     const goingUp = dy === -10;
     const goingDown = dy === 10;
@@ -139,7 +139,10 @@ function didGameEnd() {
 }
 
 function main() {
+    retry_btn.style.display = "none";
+
     if (didGameEnd()) {
+        retry_btn.style.display = "block";
         return;
     }
     
@@ -157,8 +160,20 @@ function main() {
     
 }
 
+function retry() {
+    snake = [ {x: 150, y: 150}, {x: 140, y: 150}, {x: 130, y: 150}, {x: 120, y: 150}, {x: 110, y: 150} ];
+    score = 0;
+    dx = 10;
+    dy = 0;
+    scoreHtml.innerHTML = score;
+
+    createFood();
+    main();
+}
+
+
 
 createFood();
 main()
 
-
+retry_btn.addEventListener("click", retry);
