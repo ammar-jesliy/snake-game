@@ -142,7 +142,19 @@ function main() {
     retry_btn.style.display = "none";
 
     if (didGameEnd()) {
-        retry_btn.style.display = "block";
+        setTimeout(() => {
+            clearCanvas();
+            ctx.font = "50px Arial";
+            ctx.fillStyle = 'black';
+            ctx.fillText("Game Over!", 15, 150);
+
+            ctx.font = "20px Arial";
+            ctx.fillText("score = " + score, 100, 200);
+
+            retry_btn.style.display = "block";
+            
+        }, 1000);
+
         return;
     }
     
