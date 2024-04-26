@@ -2,6 +2,7 @@ const gameCanvas = document.getElementById("gameCanvas");
 const ctx = gameCanvas.getContext("2d");
 
 const retry_btn = document.getElementById("retry");
+const start_btn = document.getElementById("start");
 
 let snake = [ {x: 150, y: 150}, {x: 140, y: 150}, {x: 130, y: 150}, {x: 120, y: 150}, {x: 110, y: 150} ];
 
@@ -172,6 +173,13 @@ function main() {
     
 }
 
+function start() {
+    createFood();
+    main();
+
+    start_btn.style.display = "none";
+}
+
 function retry() {
     snake = [ {x: 150, y: 150}, {x: 140, y: 150}, {x: 130, y: 150}, {x: 120, y: 150}, {x: 110, y: 150} ];
     score = 0;
@@ -183,9 +191,13 @@ function retry() {
     main();
 }
 
+retry_btn.style.display = "none";
 
+ctx.font = "35px Arial";
+ctx.fillStyle = 'black';
+ctx.fillText("Welcome to the", 30, 125);
+ctx.fillText("Snake Game", 45, 175);
 
-createFood();
-main()
+start_btn.addEventListener("click", start);
 
 retry_btn.addEventListener("click", retry);
