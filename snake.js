@@ -199,5 +199,4 @@ ctx.fillText("Welcome to the", 30, 125);
 ctx.fillText("Snake Game", 45, 175);
 
 start_btn.addEventListener("click", start);
-
 retry_btn.addEventListener("click", retry);
