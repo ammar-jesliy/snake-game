@@ -20,7 +20,7 @@ To run the Snake Game locally on your machine, follow these steps:
 
 1. Clone the repository to your local machine:
 ```
-git clone https://github.com/your-username/snake-game.git
+git clone https://github.com/ammar-jesliy/snake-game.git
 ```
 2. Open the `index.html` file in your web browser to start playing the game.
 
