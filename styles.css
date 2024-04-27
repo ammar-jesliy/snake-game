@@ -4,17 +4,18 @@ body {
     box-sizing: border-box;
     font-family: monospace;
     height: 100dvh;
+    background-color: #ffdf7cff;
 }
 
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20%;
+    padding-top: 200px;
 }
 
 button {
-    margin: 20px;
+    margin-top: 40px;
     padding: 10px 30px;
     background: none;
     border-radius: 5px;
@@ -25,7 +26,7 @@ button {
     font-weight: 700;
 }
 
-img {
+button img {
     width: 15px;
 }
 
@@ -33,4 +34,13 @@ img {
     padding-block: 10px;
     font-size: 16px;
     font-weight: 600;
+}
+
+#bg {
+    position: absolute;
+    top: 125px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+    z-index: -1;
 }
