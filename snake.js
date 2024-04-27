@@ -141,18 +141,20 @@ function didGameEnd() {
 
 function main() {
     retry_btn.style.display = "none";
+    scoreHtml.innerHTML = "Score = " + score;
 
     if (didGameEnd()) {
         setTimeout(() => {
             clearCanvas();
-            ctx.font = "50px Arial";
+            ctx.font = "50px monospace";
             ctx.fillStyle = 'black';
             ctx.fillText("Game Over!", 15, 150);
 
-            ctx.font = "20px Arial";
+            ctx.font = "20px monospace";
             ctx.fillText("score = " + score, 100, 200);
 
-            retry_btn.style.display = "block";
+            retry_btn.style.display = "flex";
+            scoreHtml.innerHTML = "";
             
         }, 1000);
 
@@ -185,7 +187,6 @@ function retry() {
     score = 0;
     dx = 10;
     dy = 0;
-    scoreHtml.innerHTML = score;
 
     createFood();
     main();
@@ -193,10 +194,10 @@ function retry() {
 
 retry_btn.style.display = "none";
 
-ctx.font = "35px Arial";
+ctx.font = "35px monospace";
 ctx.fillStyle = 'black';
-ctx.fillText("Welcome to the", 30, 125);
-ctx.fillText("Snake Game", 45, 175);
+ctx.fillText("Welcome to the", 17, 125);
+ctx.fillText("Snake Game", 55, 175);
 
 start_btn.addEventListener("click", start);
 retry_btn.addEventListener("click", retry);
