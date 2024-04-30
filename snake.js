@@ -14,6 +14,7 @@ let foodY = 10;
 
 let scoreHtml = document.getElementById("score");
 let score = 0;
+let highScore = localStorage.getItem('highScore');
 
 let changingDirection = true;
 
@@ -89,6 +90,9 @@ function advanceSnake() {
     } else {
         snake.pop();
     }
+    if (score > highScore) {
+        setHighScore();
+    }
 }
 
 function clearCanvas() {
@@ -151,7 +155,7 @@ function main() {
             ctx.fillText("Game Over!", 15, 150);
 
             ctx.font = "20px monospace";
-            ctx.fillText("score = " + score, 100, 200);
+            ctx.fillText("score = " + score + "   best = " + highScore, 30, 200);
 
             retry_btn.style.display = "flex";
             scoreHtml.innerHTML = "";
@@ -192,6 +196,12 @@ function retry() {
     main();
 }
 
+function setHighScore() {
+    highScore = score;
+
+    localStorage.setItem('highScore', highScore)
+}
+
 retry_btn.style.display = "none";
 
 ctx.font = "35px monospace";
@@ -201,3 +211,4 @@ ctx.fillText("Snake Game", 55, 175);
 
 start_btn.addEventListener("click", start);
 retry_btn.addEventListener("click", retry);
+
